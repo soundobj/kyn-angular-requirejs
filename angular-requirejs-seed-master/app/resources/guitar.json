@@ -1,0 +1,30 @@
+[{
+	"name" : "E",
+	"tones" : [
+		{
+			"octave": 1,
+			"frequency": 630.00,
+			"name": "E"
+		},
+		{
+		 	"octave": 1,
+			"frequency": 240.00,
+			"name": "F"
+		}
+	]
+},
+{
+	"name" : "A",
+	"tones": [
+	 	{
+			"octave": 1,
+			"frequency": 330.00,
+			"name": "A"
+		},
+		{
+		 	"octave": 1,
+			"frequency": 440.00,
+			"name": "Bb"
+		}
+	]
+}]

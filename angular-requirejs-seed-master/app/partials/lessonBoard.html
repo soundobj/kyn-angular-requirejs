@@ -1,0 +1,23 @@
+<p>This is the partial for lessonBoard.</p>
+<p>
+	{{ welcomeMessage }}
+</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+<p>Strings</p>
+<svg height="80" width="300">
+	<!--   p ng-repeat="string in instrument">{{string.name}}</p> -->
+	<!-- this renders the strings -->
+	<path ng-repeat="string in instrument" stroke="black" d="M5 {{ stringSeparation[$index] }} l215 0" />
+	<!-- this renders the frets -->
+	<line ng-repeat="tones in instrument[0].tones"  x1="{{ fretSeparation[$index] }}em" y1="1em" x2="{{ fretSeparation[$index] }}em" y2="4em" style="stroke: red;"/>
+	<!-- this renders the letters for each string / fret -->
+	<foreignobject ng-repeat="string in instrument | reverse" x="3.5em" y="{{noteSeparation[$index]}}em" width="4em" height="4em"> 
+	      <!-- TODO SET the margin of notes via css -->
+	      <span ng-repeat="tone in string.tones" onclick="jump()" id="{{tone.name}}" class="note">{{tone.name}}</span>
+	</foreignobject>
+</svg>
+<p ng-repeat="string in instrument | reverse">{{string.name}}</p>
+<ui-bar instrument="instrument"></ui-bar>
